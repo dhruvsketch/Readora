@@ -86,7 +86,7 @@ export class ReadoraStore {
         return {
           ...b,
           title: initial.title,
-          read_url: initial.read_url || b.read_url,
+          read_url: initial.read_url !== undefined ? initial.read_url : b.read_url,
           slug: initial.slug || b.slug,
           description: initial.description || b.description,
         };

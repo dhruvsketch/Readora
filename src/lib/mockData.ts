@@ -124,7 +124,7 @@ export const INITIAL_BOOKS: Book[] = [
     status: 'published',
     is_featured: true,
     reading_permissions: 'public',
-    read_url: 'https://archive.org/details/vanishing-culture-2026/page/19/mode/2up?ref=ol',
+    read_url: 'https://archive.org/details/vanishing-culture-2026/mode/2up?ref=ol',
     created_at: '2025-01-15T08:00:00Z',
     average_rating: 4.9,
     ratings_count: 142,
