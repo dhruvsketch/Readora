@@ -1,14 +1,14 @@
-import { 
-  Profile, 
-  Category, 
-  Book, 
-  BookChapter, 
-  Article, 
-  CommunityPost, 
-  Comment, 
+import {
+  Profile,
+  Category,
+  Book,
+  BookChapter,
+  Article,
+  CommunityPost,
+  Comment,
   BookListing,
   NotificationItem,
-  ReportItem 
+  ReportItem
 } from '../types/database';
 
 export const INITIAL_CATEGORIES: Category[] = [
@@ -113,8 +113,8 @@ export const INITIAL_BOOKS: Book[] = [
     title: "Vanish Culture",
     slug: 'vanish-culture',
     description: 'A series of deeply personal reflections and private notes outlining cultural heritage, resilience, and traditions.',
-    author: 'Marcus Aurelius',
-    cover_image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+    author: ' Luca Messarra; Chris Freeland; Juliya Ziskina',
+    cover_image: 'https://covers.openlibrary.org/b/id/15212970-M.jpg?auto=format&fit=crop&w=800&q=80',
     category_id: 'c1',
     language: 'English',
     publisher: 'Readora Classics Library',
