@@ -27,15 +27,15 @@ export const Footer: React.FC = () => {
               </p>
               <div className="pt-3 flex justify-center">
                 <CTAButton
-                  to={isAuthenticated ? '/dashboard' : '/signup'}
+                  to="/discover"
                   variant="gold"
                   size="lg"
                   shape="pill"
                   withArrow
-                  ctaName="Footer Get Started"
+                  ctaName="Footer Start Reading"
                   ctaSection="footer_cta"
                 >
-                  {isAuthenticated ? 'Open Dashboard' : 'Get Started'}
+                  Start Reading
                 </CTAButton>
               </div>
             </div>

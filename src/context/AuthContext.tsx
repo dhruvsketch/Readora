@@ -23,8 +23,12 @@ const CURRENT_USER_KEY = 'readora_active_user_id';
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<Profile | null>(() => {
-    const savedId = localStorage.getItem(CURRENT_USER_KEY) || 'u-admin-1';
-    return ReadoraStore.getProfileById(savedId) || ReadoraStore.getProfiles()[0] || null;
+    const savedId = localStorage.getItem(CURRENT_USER_KEY);
+    if (savedId === 'u-admin-1') {
+      localStorage.removeItem(CURRENT_USER_KEY);
+      return null;
+    }
+    return savedId ? ReadoraStore.getProfileById(savedId) || null : null;
   });
 
   useEffect(() => {
