@@ -120,6 +120,7 @@ export const HomePage: React.FC = () => {
                   <div className="flex space-x-4">
                     <img
                       src="https://covers.openlibrary.org/b/id/15212970-M.jpg?auto=format&fit=crop&w=400&q=80"
+                      src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80"
                       alt="Meditations"
                       className="w-24 h-36 object-cover rounded-lg shadow-book flex-shrink-0"
                     />
@@ -208,7 +209,7 @@ export const HomePage: React.FC = () => {
                 className="bg-readora-surface rounded-xl p-4 border border-readora-border flex items-center space-x-4 shadow-sm hover:border-readora-forest/40 transition-colors"
               >
                 <img
-                  src={item.book?.cover_image || 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=200&q=80'}
+                  src={item.book?.cover_image || 'https://covers.openlibrary.org/b/id/15212970-M.jpg?auto=format&fit=crop&w=200&q=80'}
                   alt={item.book?.title}
                   className="w-16 h-24 object-cover rounded shadow-sm flex-shrink-0"
                 />
