@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F8F6F1;
+    --text-primary: #20211F;
+    --text-muted: #73756F;
+    --border-color: #E7E4DC;
+    --brand-forest: #315C4B;
+    --brand-gold: #C6A56B;
+  }
+
+  body {
+    background-color: #F8F6F1;
+    color: #20211F;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Newsreader', Georgia, serif;
+    color: #20211F;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom Editorial Utilities */
+.font-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+/* Reading themes */
+.reader-theme-ivory {
+  background-color: #F8F6F1;
+  color: #20211F;
+}
+
+.reader-theme-sepia {
+  background-color: #F4ECD8;
+  color: #382C1E;
+}
+
+.reader-theme-dark {
+  background-color: #191B1A;
+  color: #E2DFD8;
+}
+
+.reader-theme-purewhite {
+  background-color: #FFFFFF;
+  color: #111111;
+}
+
+/* Prose for articles and reading content */
+.prose-editorial {
+  font-family: 'Newsreader', Georgia, serif;
+  line-height: 1.8;
+  font-size: 1.15rem;
+}
+
+.prose-editorial p {
+  margin-bottom: 1.5rem;
+}
+
+.prose-editorial h2 {
+  font-size: 1.85rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.prose-editorial h3 {
+  font-size: 1.45rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.prose-editorial blockquote {
+  border-left: 3px solid #C6A56B;
+  padding-left: 1.25rem;
+  margin: 1.75rem 0;
+  font-style: italic;
+  color: #494C47;
+}
+
+.prose-editorial a {
+  color: #315C4B;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F6F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5D0C3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B08E53;
+}
