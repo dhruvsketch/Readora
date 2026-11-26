@@ -217,7 +217,10 @@ export const DiscoverPage: React.FC = () => {
                         View Details
                       </CTAButton>
                       <CTAButton
-                        to={`/read/${book.id}`}
+                        to={book.read_url ? undefined : `/read/${book.id}`}
+                        href={book.read_url}
+                        target={book.read_url ? "_blank" : undefined}
+                        rel={book.read_url ? "noopener noreferrer" : undefined}
                         variant="primary"
                         size="sm"
                         shape="rounded"

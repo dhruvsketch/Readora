@@ -79,7 +79,20 @@ function generateId(prefix: string): string {
 export class ReadoraStore {
   // Books
   static getBooks(): Book[] {
-    return getStored<Book[]>(KEYS.BOOKS, INITIAL_BOOKS);
+    const stored = getStored<Book[]>(KEYS.BOOKS, INITIAL_BOOKS);
+    return stored.map(b => {
+      const initial = INITIAL_BOOKS.find(ib => ib.id === b.id);
+      if (initial) {
+        return {
+          ...b,
+          title: initial.title,
+          read_url: initial.read_url || b.read_url,
+          slug: initial.slug || b.slug,
+          description: initial.description || b.description,
+        };
+      }
+      return b;
+    });
   }
 
   static getBookById(id: string): Book | undefined {
@@ -116,6 +129,8 @@ export class ReadoraStore {
         publication_date: book.publication_date || new Date().toISOString().split('T')[0],
         format: book.format || 'Chapter-based',
         license: book.license || 'Public Domain',
+        file_url: book.file_url,
+        read_url: book.read_url,
         status: book.status || 'published',
         is_featured: book.is_featured ?? false,
         reading_permissions: book.reading_permissions || 'public',

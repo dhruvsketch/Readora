@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  BookOpen, 
-  Sparkles, 
-  Feather, 
-  Clock, 
-  Heart, 
-  MessageSquare, 
+import {
+  BookOpen,
+  Sparkles,
+  Feather,
+  Clock,
+  Heart,
+  MessageSquare,
   CheckCircle,
   Star,
   Repeat,
@@ -45,12 +45,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="space-y-24 pb-16">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-readora-border/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Narrative Column */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center space-x-2 bg-readora-forest/10 border border-readora-forest/20 text-readora-forest px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide">
@@ -114,12 +114,12 @@ export const HomePage: React.FC = () => {
             {/* Right Visual Composition */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-sm lg:max-w-none">
-                
+
                 {/* Main Feature Book Card */}
                 <div className="bg-readora-surface rounded-2xl p-6 shadow-book-lg border border-readora-border/80 transform hover:-translate-y-1 transition-transform">
                   <div className="flex space-x-4">
                     <img
-                      src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80"
+                      src="https://covers.openlibrary.org/b/id/15212970-M.jpg?auto=format&fit=crop&w=400&q=80"
                       alt="Meditations"
                       className="w-24 h-36 object-cover rounded-lg shadow-book flex-shrink-0"
                     />
@@ -129,9 +129,9 @@ export const HomePage: React.FC = () => {
                           Editor's Choice
                         </span>
                         <h3 className="font-serif text-lg font-bold text-readora-ink mt-1.5 leading-snug">
-                          Meditations
+                          {featuredBooks[0]?.title || "Vanish Culture"}
                         </h3>
-                        <p className="text-xs text-readora-muted">Marcus Aurelius</p>
+                        <p className="text-xs text-readora-muted">{featuredBooks[0]?.author || "Marcus Aurelius"}</p>
                       </div>
                       <div className="flex items-center space-x-1 text-xs text-readora-gold">
                         <Star className="w-3.5 h-3.5 fill-readora-gold text-readora-gold" />
@@ -140,14 +140,16 @@ export const HomePage: React.FC = () => {
                       </div>
                       <div className="mt-2">
                         <CTAButton
-                          to="/read/b1"
+                          to={featuredBooks[0]?.read_url ? undefined : "/read/b1"}
+                          href={featuredBooks[0]?.read_url || "https://archive.org/details/vanishing-culture-2026/mode/2up?ref=ol"}
+                          target={featuredBooks[0]?.read_url || !featuredBooks.length ? "_blank" : undefined}
                           variant="text"
                           size="sm"
                           withArrow
-                          ctaName="Hero Featured Card Read Chapter 1"
+                          ctaName="Hero Featured Card Read Now"
                           ctaSection="hero_book_card"
                         >
-                          Read Chapter 1
+                          Read Now
                         </CTAButton>
                       </div>
                     </div>
@@ -201,8 +203,8 @@ export const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {readingHistory.slice(0, 2).map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="bg-readora-surface rounded-xl p-4 border border-readora-border flex items-center space-x-4 shadow-sm hover:border-readora-forest/40 transition-colors"
               >
                 <img
@@ -219,7 +221,7 @@ export const HomePage: React.FC = () => {
                       <span>{Math.round(item.progress_percent)}%</span>
                     </div>
                     <div className="w-full bg-readora-ivory rounded-full h-1.5 overflow-hidden">
-                      <div 
+                      <div
                         className="bg-readora-forest h-1.5 rounded-full transition-all"
                         style={{ width: `${item.progress_percent}%` }}
                       />
@@ -306,7 +308,10 @@ export const HomePage: React.FC = () => {
                 </CTAButton>
 
                 <CTAButton
-                  to={`/read/${book.id}`}
+                  to={book.read_url ? undefined : `/read/${book.id}`}
+                  href={book.read_url}
+                  target={book.read_url ? "_blank" : undefined}
+                  rel={book.read_url ? "noopener noreferrer" : undefined}
                   variant="primary"
                   size="sm"
                   shape="rounded"

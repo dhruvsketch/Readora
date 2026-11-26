@@ -181,7 +181,7 @@ describe('Strategic CTA Buttons System', () => {
       expect(screen.getByRole('link', { name: /explore library/i }).getAttribute('href')).toBe('/discover');
       expect(screen.getByRole('link', { name: /borrow a book/i }).getAttribute('href')).toBe('/borrowed');
       expect(screen.getByRole('link', { name: /list a book/i })).toBeTruthy();
-      expect(screen.getByRole('link', { name: /explore stories/i }).getAttribute('href')).toBe('/articles');
+      expect(screen.getAllByRole('link', { name: /explore stories/i })[0].getAttribute('href')).toBe('/articles');
     });
   });
 });

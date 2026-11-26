@@ -42,6 +42,7 @@ export interface Book {
   format: BookFormat;
   license: string;
   file_url?: string;
+  read_url?: string;
   status: ContentStatus;
   is_featured: boolean;
   reading_permissions: ReadingPermission;

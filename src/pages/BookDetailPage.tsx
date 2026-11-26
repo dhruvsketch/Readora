@@ -128,7 +128,10 @@ export const BookDetailPage: React.FC = () => {
           {/* Action Buttons */}
           <div className="mt-6 space-y-3">
             <CTAButton
-              to={`/read/${book.id}`}
+              to={book.read_url ? undefined : `/read/${book.id}`}
+              href={book.read_url}
+              target={book.read_url ? "_blank" : undefined}
+              rel={book.read_url ? "noopener noreferrer" : undefined}
               variant="primary"
               size="md"
               shape="rounded"
@@ -138,7 +141,7 @@ export const BookDetailPage: React.FC = () => {
               ctaName={`Book Detail Read - ${book.title}`}
               ctaSection="book_detail_hero"
             >
-              {progress ? 'Resume Reading' : 'Start Reading'}
+              {book.read_url ? 'Read Online' : progress ? 'Resume Reading' : 'Start Reading'}
             </CTAButton>
 
             <CTAButton

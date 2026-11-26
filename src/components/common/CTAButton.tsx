@@ -14,6 +14,8 @@ export interface CTAButtonProps {
   shape?: CTAShape;
   to?: string;
   href?: string;
+  target?: string;
+  rel?: string;
   state?: any;
   type?: 'button' | 'submit' | 'reset';
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -38,6 +40,8 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   shape = 'pill',
   to,
   href,
+  target,
+  rel,
   state,
   type = 'button',
   onClick,
@@ -148,6 +152,8 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
     return (
       <a
         href={href}
+        target={target}
+        rel={rel || (target === '_blank' ? 'noopener noreferrer' : undefined)}
         className={combinedClasses}
         onClick={handleClick}
         title={title}

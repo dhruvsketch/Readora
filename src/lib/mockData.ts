@@ -110,9 +110,9 @@ export const INITIAL_PROFILES: Profile[] = [
 export const INITIAL_BOOKS: Book[] = [
   {
     id: 'b1',
-    title: "Meditations: The Emperor's Notebook",
-    slug: 'meditations-marcus-aurelius',
-    description: 'A series of deeply personal reflections and private notes written by Marcus Aurelius, Roman Emperor from 161 to 180 AD, outlining Stoic philosophy and practical ethics for resilience, virtue, and tranquility.',
+    title: "Vanish Culture",
+    slug: 'vanish-culture',
+    description: 'A series of deeply personal reflections and private notes outlining cultural heritage, resilience, and traditions.',
     author: 'Marcus Aurelius',
     cover_image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
     category_id: 'c1',
@@ -124,6 +124,7 @@ export const INITIAL_BOOKS: Book[] = [
     status: 'published',
     is_featured: true,
     reading_permissions: 'public',
+    read_url: 'https://archive.org/details/vanishing-culture-2026/page/19/mode/2up?ref=ol',
     created_at: '2025-01-15T08:00:00Z',
     average_rating: 4.9,
     ratings_count: 142,
