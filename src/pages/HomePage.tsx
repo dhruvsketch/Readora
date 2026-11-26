@@ -119,7 +119,6 @@ export const HomePage: React.FC = () => {
                 <div className="bg-readora-surface rounded-2xl p-6 shadow-book-lg border border-readora-border/80 transform hover:-translate-y-1 transition-transform">
                   <div className="flex space-x-4">
                     <img
-                      src="https://covers.openlibrary.org/b/id/15212970-M.jpg?auto=format&fit=crop&w=400&q=80"
                       src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80"
                       alt="Meditations"
                       className="w-24 h-36 object-cover rounded-lg shadow-book flex-shrink-0"
