@@ -326,7 +326,13 @@ export const BlogPostPage: React.FC = () => {
                     </div>
 
                     <h3 className="font-serif font-bold text-base text-readora-ink group-hover:text-readora-forest transition-colors line-clamp-2 leading-snug">
-                      <Link to={`/blog/${related.slug}`}>{related.title}</Link>
+                      {related.externalUrl ? (
+                        <a href={related.externalUrl} target="_blank" rel="noopener noreferrer">
+                          {related.title}
+                        </a>
+                      ) : (
+                        <Link to={`/blog/${related.slug}`}>{related.title}</Link>
+                      )}
                     </h3>
 
                     <p className="mt-2 text-xs text-readora-ink/70 line-clamp-2 leading-relaxed">
@@ -336,13 +342,25 @@ export const BlogPostPage: React.FC = () => {
 
                   <div className="mt-4 pt-3 border-t border-readora-border/50 flex items-center justify-between">
                     <span className="text-[11px] text-readora-muted">{related.readTime}</span>
-                    <Link
-                      to={`/blog/${related.slug}`}
-                      className="group/btn inline-flex items-center gap-1 text-xs font-semibold text-readora-forest hover:text-readora-forest-dark"
-                    >
-                      <span>More</span>
-                      <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-0.5 transition-transform" />
-                    </Link>
+                    {related.externalUrl ? (
+                      <a
+                        href={related.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn inline-flex items-center gap-1 text-xs font-semibold text-readora-forest hover:text-readora-forest-dark"
+                      >
+                        <span>More</span>
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-0.5 transition-transform" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={`/blog/${related.slug}`}
+                        className="group/btn inline-flex items-center gap-1 text-xs font-semibold text-readora-forest hover:text-readora-forest-dark"
+                      >
+                        <span>More</span>
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
                   </div>
                 </article>
               ))}

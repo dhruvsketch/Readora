@@ -1,6 +1,7 @@
 export interface BlogPost {
   id: string;
   slug: string;
+  externalUrl?: string;
   title: string;
   subtitle: string;
   category: string;
@@ -38,6 +39,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-1',
     slug: 'online-book-reading-platforms',
+    externalUrl: 'https://www.blogger.com/u/1/blog/post/edit/4436135911855939717/3390726207864395551',
     title: 'Why Online Book Reading Platforms Are Changing the Way We Read',
     subtitle: 'From static pages to dynamic cognitive spaces: How digital platforms are transforming modern reading habits.',
     category: 'Digital Reading',

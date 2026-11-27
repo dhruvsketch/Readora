@@ -32,7 +32,7 @@ describe('Readora Premium Editorial Blog System', () => {
     const moreButtons = screen.getAllByRole('link', { name: /read more about/i });
     expect(moreButtons.length).toBe(5);
 
-    expect(moreButtons[0].getAttribute('href')).toBe('/blog/online-book-reading-platforms');
+    expect(moreButtons[0].getAttribute('href')).toBe('https://www.blogger.com/u/1/blog/post/edit/4436135911855939717/3390726207864395551');
     expect(moreButtons[1].getAttribute('href')).toBe('/blog/digital-library');
     expect(moreButtons[2].getAttribute('href')).toBe('/blog/online-reading-community');
     expect(moreButtons[3].getAttribute('href')).toBe('/blog/book-discovery-platform');

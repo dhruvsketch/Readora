@@ -79,23 +79,45 @@ export const BlogPage: React.FC = () => {
                   <article className="group bg-white rounded-2xl border border-readora-border/80 shadow-editorial hover:shadow-book-lg hover:border-readora-forest/30 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between w-full overflow-hidden">
                     <div>
                       {/* Image Section (4:3 aspect ratio) */}
-                      <Link
-                        to={`/blog/${post.slug}`}
-                        className="block relative aspect-[4/3] overflow-hidden bg-readora-ivory-dark"
-                        tabIndex={-1}
-                        aria-hidden="true"
-                      >
-                        <img
-                          src={post.coverImage}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                          loading={index < 3 ? 'eager' : 'lazy'}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <span className="absolute top-3 right-3 text-[11px] font-semibold tracking-wider uppercase bg-white/95 backdrop-blur-sm text-readora-forest px-3 py-1 rounded-full shadow-sm border border-readora-border/60">
-                          {post.category}
-                        </span>
-                      </Link>
+                      {post.externalUrl ? (
+                        <a
+                          href={post.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block relative aspect-[4/3] overflow-hidden bg-readora-ivory-dark"
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        >
+                          <img
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                            loading={index < 3 ? 'eager' : 'lazy'}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <span className="absolute top-3 right-3 text-[11px] font-semibold tracking-wider uppercase bg-white/95 backdrop-blur-sm text-readora-forest px-3 py-1 rounded-full shadow-sm border border-readora-border/60">
+                            {post.category}
+                          </span>
+                        </a>
+                      ) : (
+                        <Link
+                          to={`/blog/${post.slug}`}
+                          className="block relative aspect-[4/3] overflow-hidden bg-readora-ivory-dark"
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        >
+                          <img
+                            src={post.coverImage}
+                            alt={post.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                            loading={index < 3 ? 'eager' : 'lazy'}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <span className="absolute top-3 right-3 text-[11px] font-semibold tracking-wider uppercase bg-white/95 backdrop-blur-sm text-readora-forest px-3 py-1 rounded-full shadow-sm border border-readora-border/60">
+                            {post.category}
+                          </span>
+                        </Link>
+                      )}
 
                       {/* Content Section */}
                       <div className="p-6 pb-2">
@@ -114,9 +136,20 @@ export const BlogPage: React.FC = () => {
 
                         {/* Title */}
                         <h2 className="font-serif text-xl sm:text-2xl font-bold text-readora-ink leading-snug group-hover:text-readora-forest transition-colors line-clamp-2">
-                          <Link to={`/blog/${post.slug}`} className="focus:outline-none focus-visible:underline">
-                            {post.title}
-                          </Link>
+                          {post.externalUrl ? (
+                            <a
+                              href={post.externalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="focus:outline-none focus-visible:underline"
+                            >
+                              {post.title}
+                            </a>
+                          ) : (
+                            <Link to={`/blog/${post.slug}`} className="focus:outline-none focus-visible:underline">
+                              {post.title}
+                            </Link>
+                          )}
                         </h2>
 
                         {/* Description (2-3 lines) */}
@@ -139,14 +172,27 @@ export const BlogPage: React.FC = () => {
                         </span>
                       </div>
 
-                      <Link
-                        to={`/blog/${post.slug}`}
-                        className="group/btn inline-flex items-center gap-1 text-sm font-semibold text-readora-forest hover:text-readora-forest-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-readora-forest focus-visible:ring-offset-2 rounded px-2 py-1 -mr-2"
-                        aria-label={`Read more about ${post.title}`}
-                      >
-                        <span>More</span>
-                        <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-200" />
-                      </Link>
+                      {post.externalUrl ? (
+                        <a
+                          href={post.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group/btn inline-flex items-center gap-1 text-sm font-semibold text-readora-forest hover:text-readora-forest-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-readora-forest focus-visible:ring-offset-2 rounded px-2 py-1 -mr-2"
+                          aria-label={`Read more about ${post.title}`}
+                        >
+                          <span>More</span>
+                          <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        </a>
+                      ) : (
+                        <Link
+                          to={`/blog/${post.slug}`}
+                          className="group/btn inline-flex items-center gap-1 text-sm font-semibold text-readora-forest hover:text-readora-forest-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-readora-forest focus-visible:ring-offset-2 rounded px-2 py-1 -mr-2"
+                          aria-label={`Read more about ${post.title}`}
+                        >
+                          <span>More</span>
+                          <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        </Link>
+                      )}
                     </div>
                   </article>
                 </div>
