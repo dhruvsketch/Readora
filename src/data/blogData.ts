@@ -39,7 +39,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-1',
     slug: 'online-book-reading-platforms',
-    externalUrl: 'https://fokusdrv.blogspot.com/2026/11/why-online-book-reading-sites-are.html',
+    externalUrl: 'https://readora-insights.blogspot.com/2026/11/why-online-book-reading-sites-are.html',
     title: 'Why Online Book Reading Platforms Are Changing the Way We Read',
     subtitle: 'From static pages to dynamic cognitive spaces: How digital platforms are transforming modern reading habits.',
     category: 'Digital Reading',
