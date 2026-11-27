@@ -99,6 +99,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-2',
     slug: 'digital-library',
+    externalUrl: 'https://readora-insights.blogspot.com/2026/11/a-way-to-access-knowledge-and-explore.html',
     title: 'Digital Library: A Smarter Way to Access Knowledge and Explore Books',
     subtitle: 'Preserving our collective intellectual heritage while opening new frontiers for lifelong learners.',
     category: 'Digital Library',
@@ -158,6 +159,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-3',
     slug: 'online-reading-community',
+    externalUrl: '',
     title: 'Online Reading Community: Why Reading Is Better When We Share Ideas',
     subtitle: 'Rediscovering the communal salon: How thoughtful dialogue deepens our relationship with literature.',
     category: 'Reading Community',
@@ -217,6 +219,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-4',
     slug: 'book-discovery-platform',
+    externalUrl: '',
     title: 'Book Discovery Platform: How to Find Your Next Favourite Book',
     subtitle: 'Transcending commercial bestseller algorithms through thematic curation and serendipitous exploration.',
     category: 'Book Discovery',
@@ -276,6 +279,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-5',
     slug: 'book-sharing-community',
+    externalUrl: '',
     title: 'Book Sharing Community: Turning Reading Experiences into Shared Knowledge',
     subtitle: 'From personal bookshelves to communal commons: Reclaiming the social soul of physical and digital lending.',
     category: 'Knowledge Sharing',
