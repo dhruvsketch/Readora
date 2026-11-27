@@ -70,6 +70,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs text-readora-muted">
               <li><Link to="/discover" className="hover:text-readora-forest transition-colors">Discover</Link></li>
               <li><Link to="/books" className="hover:text-readora-forest transition-colors">Books & Digital Library</Link></li>
+              <li><Link to="/blog" className="hover:text-readora-forest transition-colors font-medium">The Readora Journal (Blog)</Link></li>
               <li><Link to="/articles" className="hover:text-readora-forest transition-colors">Articles & Essays</Link></li>
               <li><Link to="/community" className="hover:text-readora-forest transition-colors">Community Feed</Link></li>
               <li><Link to="/borrowed" className="hover:text-readora-forest transition-colors">Book Lending</Link></li>

@@ -14,6 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
   const navLinks = [
     { label: 'Discover', to: '/discover' },
     { label: 'Books', to: '/books' },
+    { label: 'Blog', to: '/blog' },
     { label: 'Articles', to: '/articles' },
   ];
 

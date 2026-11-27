@@ -12,6 +12,8 @@ import { BookDetailPage } from './pages/BookDetailPage';
 import { DigitalReaderPage } from './pages/DigitalReaderPage';
 import { ArticlesPage } from './pages/ArticlesPage';
 import { ArticleDetailPage } from './pages/ArticleDetailPage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
 import { AuthorProfilePage } from './pages/AuthorProfilePage';
 import { CommunityPage } from './pages/CommunityPage';
 import { BorrowingPage } from './pages/BorrowingPage';
@@ -81,6 +83,8 @@ export function App() {
             <Route path="discover" element={<DiscoverPage />} />
             <Route path="books" element={<BooksPage />} />
             <Route path="books/:id" element={<BookDetailPage />} />
+            <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/:slug" element={<BlogPostPage />} />
             <Route path="articles" element={<ArticlesPage />} />
             <Route path="articles/:id" element={<ArticleDetailPage />} />
             <Route path="authors/:id" element={<AuthorProfilePage />} />
