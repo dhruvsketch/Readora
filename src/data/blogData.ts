@@ -159,7 +159,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-3',
     slug: 'online-reading-community',
-    externalUrl: '',
+    externalUrl: 'https://readora-insights.blogspot.com/2026/11/why-reading-is-better-when-we-share.html',
     title: 'Online Reading Community: Why Reading Is Better When We Share Ideas',
     subtitle: 'Rediscovering the communal salon: How thoughtful dialogue deepens our relationship with literature.',
     category: 'Reading Community',
